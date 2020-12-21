@@ -1,0 +1,17 @@
+{
+  "name": "ask_me_anything",
+  "version": "1.0.0",
+  "description": "a simple api implemented by nodejs with sqlite3, inspired by ask_me_anything",
+  "main": "main.js",
+  "scripts": {
+    "serve": "node src/main.js"
+  },
+  "author": "lynn",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "pm2": "^4.5.1",
+    "sqlite3": "^5.0.0"
+  }
+}
