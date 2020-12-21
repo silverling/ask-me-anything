@@ -6,3 +6,5 @@ services:
     container_name: ask-me-anything-nodejs
     ports:
       - 8080:8080
+    environment:
+      - AMA_TOKEN="p@ssW0rd"
