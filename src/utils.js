@@ -19,12 +19,12 @@ const QAParser = (QA, type, callback) => {
       prefix = "  - ";
     }
     str += fixWidth(
-      `${prefix}Q: ${Buffer.from(item.question, "base64").toString("ascii")}\n`,
+      `${prefix}Q: ${Buffer.from(item.question, "base64").toString("utf-8")}\n`,
       80
     );
     if (item.answer !== null) {
       str += fixWidth(
-        `    A: ${Buffer.from(item.answer, "base64").toString("ascii")}\n\n`,
+        `    A: ${Buffer.from(item.answer, "base64").toString("utf-8")}\n\n`,
         80
       );
     } else {

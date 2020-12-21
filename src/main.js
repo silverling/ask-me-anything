@@ -41,7 +41,10 @@ app.post("/list", (req, res) => {
   auth(req.body.TOKEN, (err) => {
     if (err) return res.send(err);
     db.listAll((rows) =>
-      utils.QAParser(rows, "admin", (rows) => res.send(rows))
+      utils.QAParser(rows, "admin", (rows) => {
+        if (rows.length === 0) res.send("There's no question yet... 🥶");
+        else res.send(rows);
+      })
     );
   });
 });
