@@ -29,7 +29,10 @@ app.post("/new", (req, res) => {
 
 app.get("/all", (req, res) => {
   db.listAll((rows) =>
-    utils.QAParser(rows, "normal", (rows) => res.send(rows))
+    utils.QAParser(rows, "normal", (rows) => {
+      if (rows.length === 0) res.send("There's no question yet... 🥶");
+      else res.send(rows);
+    })
   );
 });
 
